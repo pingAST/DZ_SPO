@@ -11,13 +11,13 @@ public class Main {
         String text = "aIm9qsQjkOvY4WCE3odRzteb7pwB0yfHM6hurn1GNVU5KLlF8cSix2PTJAgDXZ";
         Pattern pattern = Pattern.compile("\\d"); //Найти все цифры
        // Pattern pattern = Pattern.compile("\\D"); //Найти все буквы
-        String rezult = "";
+        StringBuilder rezult = new StringBuilder();
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
                 int start = matcher.start();
                 int end = matcher.end();
             // System.out.println("Найдено совпадение " + text.substring(start,end) + " с "+ start + " по " + (end-1) + " позицию");
-            rezult = rezult + (text.substring(matcher.start(), matcher.end()));
+            rezult.append(text, start, end);
         }
         System.out.println(rezult);
     }
