@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         String text = "aIm9qsQjkOvY4WCE3odRzteb7pwB0yfHM6hurn1GNVU5KLlF8cSix2PTJAgDXZ";
-        Pattern pattern = Pattern.compile("\\d"); //Найти все цифры
-       // Pattern pattern = Pattern.compile("\\D"); //Найти все буквы
+        Pattern pattern = Pattern.compile("\\d"); //Найти все цифры[0-9]
+        //Pattern pattern = Pattern.compile("[a-zA-z]"); //Найти все буквы \\D
         StringBuilder rezult = new StringBuilder();
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
