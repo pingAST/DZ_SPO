@@ -12,14 +12,17 @@ public class Main {
                       "fish dog cat dog cat\n" +
                       "dog cat fish cat dog \n" +
                       "dog cat fish dog cat";
-        Pattern pattern = Pattern.compile("[a-z]*"); //Найти все буквы
-        StringBuilder rezult = new StringBuilder();
+        Pattern pattern = Pattern.compile("([a-z]+) ([a-z]+) ([a-z]+) ([a-z]+) ([a-z]+)"); //Найти все буквы
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
-            int start = matcher.start();
-            int end = matcher.end();
-            rezult.append(text, start, end);
+            if (matcher.group(1).equals(matcher.group(5))) {
+               System.out.println("    " + matcher.group(2) + " " + matcher.group(3) + " " +  matcher.group(4) + " " + matcher.group(5)) ;
+            }
+            else {
+                System.out.println(  matcher.group(0)) ;
+            }
+
         }
-        System.out.println(rezult);
+
     }
 }
